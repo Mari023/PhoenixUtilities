@@ -1,0 +1,19 @@
+[
+  {
+    "modid": "phoenixUtilities",
+    "name": "PhoenixUtilities",
+    "description": "",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Mari_023",
+      "schockocraft"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
