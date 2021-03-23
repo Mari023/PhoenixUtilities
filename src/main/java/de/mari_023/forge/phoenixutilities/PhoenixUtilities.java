@@ -1,7 +1,11 @@
 package de.mari_023.forge.phoenixutilities;
 
+import de.mari_023.forge.phoenixutilities.items.ItemBase;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -17,7 +21,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 )
 public class PhoenixUtilities {
 
-    public static final String MOD_ID = "phoenixUtilities";
+    public static final String MOD_ID = "phoenixutilities";
     public static final String MOD_NAME = "PhoenixUtilities";
     public static final String VERSION = "1.0-SNAPSHOT";
 
@@ -41,7 +45,7 @@ public class PhoenixUtilities {
      */
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-
+        MinecraftForge.EVENT_BUS.register(new DeathEventHandler());
     }
 
     /**
@@ -52,15 +56,21 @@ public class PhoenixUtilities {
 
     }
 
+    public static final CreativeTabs tabPhoenixUtilities = (new CreativeTabs("phoenixutilities") {
+
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(Items.test);
+        }
+    });
+
     /**
      * Forge will automatically look up and bind blocks to the fields in this class
      * based on their registry name.
      */
     @GameRegistry.ObjectHolder(MOD_ID)
     public static class Blocks {
-      /*
-          public static final MySpecialBlock mySpecialBlock = null; // placeholder for special block below
-      */
+        //public static final Block block = null;
     }
 
     /**
@@ -69,10 +79,8 @@ public class PhoenixUtilities {
      */
     @GameRegistry.ObjectHolder(MOD_ID)
     public static class Items {
-      /*
-          public static final ItemBlock mySpecialBlock = null; // itemblock for the block above
-          public static final MySpecialItem mySpecialItem = null; // placeholder for special item below
-      */
+        //public static final ItemBlock itemBlock = null; // itemblock for the block above
+        public static final ItemBase test = new ItemBase("test");
     }
 
     /**
@@ -85,10 +93,41 @@ public class PhoenixUtilities {
          */
         @SubscribeEvent
         public static void addItems(RegistryEvent.Register<Item> event) {
-           /*
-             event.getRegistry().register(new ItemBlock(Blocks.myBlock).setRegistryName(MOD_ID, "myBlock"));
-             event.getRegistry().register(new MySpecialItem().setRegistryName(MOD_ID, "mySpecialItem"));
-            */
+            //event.getRegistry().register(new ItemBlock(Blocks.Block).setRegistryName(MOD_ID, "block"));
+            event.getRegistry().register(Items.test);
+            event.getRegistry().register(new ItemBase("ash"));
+            event.getRegistry().register(new ItemBase("binding_sticky_twine"));
+            event.getRegistry().register(new ItemBase("binding_yarn"));
+            event.getRegistry().register(new ItemBase("bone_pickaxe"));
+            event.getRegistry().register(new ItemBase("bone-wood_pickaxe"));
+            event.getRegistry().register(new ItemBase("bronze_saw"));
+            event.getRegistry().register(new ItemBase("cardboard_sheet"));
+            event.getRegistry().register(new ItemBase("certus_die"));
+            event.getRegistry().register(new ItemBase("cloth"));
+            event.getRegistry().register(new ItemBase("companion_cube"));
+            event.getRegistry().register(new ItemBase("flint-bone_pickax"));
+            event.getRegistry().register(new ItemBase("flint-wood_pickaxe"));
+            event.getRegistry().register(new ItemBase("glue_bottle"));
+            event.getRegistry().register(new ItemBase("goo"));
+            event.getRegistry().register(new ItemBase("ingotcreative"));
+            event.getRegistry().register(new ItemBase("iron_saw"));
+            event.getRegistry().register(new ItemBase("mechanicalconnector"));
+            event.getRegistry().register(new ItemBase("paper_wet"));
+            event.getRegistry().register(new ItemBase("potash"));
+            event.getRegistry().register(new ItemBase("saw"));
+            event.getRegistry().register(new ItemBase("soap"));
+            event.getRegistry().register(new ItemBase("stamped_potato"));
+            event.getRegistry().register(new ItemBase("starch"));
+            event.getRegistry().register(new ItemBase("steel_saw"));
+            event.getRegistry().register(new ItemBase("sticky_twine"));
+            event.getRegistry().register(new ItemBase("stone_chisel_head"));
+            event.getRegistry().register(new ItemBase("stone_chisel"));
+            event.getRegistry().register(new ItemBase("stringwoven"));
+            event.getRegistry().register(new ItemBase("tallow"));
+            event.getRegistry().register(new ItemBase("trowel"));
+            event.getRegistry().register(new ItemBase("unfired_clay_brick"));
+            event.getRegistry().register(new ItemBase("weavingsticks"));
+            event.getRegistry().register(new ItemBase("yarn"));
         }
 
         /**
@@ -97,17 +136,8 @@ public class PhoenixUtilities {
         @SubscribeEvent
         public static void addBlocks(RegistryEvent.Register<Block> event) {
            /*
-             event.getRegistry().register(new MySpecialBlock().setRegistryName(MOD_ID, "mySpecialBlock"));
+             event.getRegistry().register(new Block().setRegistryName(MOD_ID, "block"));
             */
         }
     }
-    /* EXAMPLE ITEM AND BLOCK - you probably want these in separate files
-    public static class MySpecialItem extends Item {
-
-    }
-
-    public static class MySpecialBlock extends Block {
-
-    }
-    */
 }
