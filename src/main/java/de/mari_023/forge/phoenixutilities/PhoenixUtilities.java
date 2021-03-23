@@ -22,7 +22,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class PhoenixUtilities {
 
     public static final String MOD_ID = "phoenixutilities";
-    public static final String MOD_NAME = "PhoenixUtilities";
+    public static final String MOD_NAME = "Phönix Utilities";
     public static final String VERSION = "1.0-SNAPSHOT";
 
     /**
