@@ -2,9 +2,11 @@ package de.mari_023.forge.phoenixutilities;
 
 import de.mari_023.forge.phoenixutilities.items.ItemBase;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -104,8 +106,7 @@ public class PhoenixUtilities {
             event.getRegistry().register(new ItemBase("cardboard_sheet"));
             event.getRegistry().register(new ItemBase("certus_die"));
             event.getRegistry().register(new ItemBase("cloth"));
-            event.getRegistry().register(new ItemBase("companion_cube"));
-            event.getRegistry().register(new ItemBase("flint-bone_pickax"));
+            event.getRegistry().register(new ItemBase("flint-bone_pickaxe"));
             event.getRegistry().register(new ItemBase("flint-wood_pickaxe"));
             event.getRegistry().register(new ItemBase("glue_bottle"));
             event.getRegistry().register(new ItemBase("goo"));
